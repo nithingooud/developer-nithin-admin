@@ -32,7 +32,8 @@ const locations = {
     MUMBAI: 'Mumbai',
     CHENNAI: 'Chennai',
     PUNE: 'Pune',
-    DELHI: 'Delhi'
+    DELHI: 'Delhi',
+    REMOTE: 'Remote'
 }
 
 const employmentTypes = {
@@ -40,16 +41,16 @@ const employmentTypes = {
     INTERNSHIP: 'Internship'
 }
 
-const roles = {
-    SOFT: 'Software Engineer',
-    SDE: 'SDE',
-    QA: 'Quality Analyst',
-    MARKETING_SPECIALIST: 'Marketing Specialist',
-    WEB_DESIGNER: 'Web Designer',
-    APP_DEVELOPER: 'App Developer',
-    DATA_ENGINEER: 'Data Engineer',
-    WEB_DEVELOPER: 'Web Developer'
-}
+// const roles = {
+//     SOFT: 'Software Engineer',
+//     SDE: 'SDE',
+//     QA: 'Quality Analyst',
+//     MARKETING_SPECIALIST: 'Marketing Specialist',
+//     WEB_DESIGNER: 'Web Designer',
+//     APP_DEVELOPER: 'App Developer',
+//     DATA_ENGINEER: 'Data Engineer',
+//     WEB_DEVELOPER: 'Web Developer'
+// }
 
 
 const AddJobDetails = () => {
@@ -65,10 +66,10 @@ const AddJobDetails = () => {
         label: key
     }));
 
-    const roleOptions = Object.entries(roles).map(([key, value]) => ({
-        value: value,
-        label: key
-    }));
+    // const roleOptions = Object.entries(roles).map(([key, value]) => ({
+    //     value: value,
+    //     label: key
+    // }));
 
 
 
@@ -185,7 +186,7 @@ const AddJobDetails = () => {
                             <ErrorMessage name="responsibilities" component="p" className="text-red-600" />
                         </div>
 
-                        <div className="mb-4">
+                        {/* <div className="mb-4">
                             <label htmlFor="role" className="block font-medium">Role</label>
                             <Select
                                 options={roleOptions}
@@ -197,6 +198,15 @@ const AddJobDetails = () => {
                                 isSearchable={true}
                                 name="role"
                             />
+                        </div> */}
+                        <div className="w-1/2 pr-2">
+                            <label htmlFor="role" className="block font-medium">Role</label>
+                            <Field
+                                name="role"
+                                type="text"
+                                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                            />
+                            <ErrorMessage name="role" component="p" className="text-red-600" />
                         </div>
 
                         <div className="mb-4">
